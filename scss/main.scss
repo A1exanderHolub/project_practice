@@ -1,0 +1,116 @@
+// sm: 576px,
+// md: 768px,
+// lg: 992px,
+// xl: 1200px,
+// xxl: 1400px
+
+// 1 - Mobile First - берём за основу мобильную версию
+// 2 - Desktop first - берём за основу десктопную версию
+
+// Формула для расчёта отсутпов в зависимости от щирины контента
+// 1800 - 1140  = 660 / 2 = 330px
+// 1140 / 2 = 570px
+@import "vars";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  // height: 100vh;
+
+  background: linear-gradient(45deg, #9d9652, #b5c0c1);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", Verdana, sans-serif;
+}
+
+.header,
+.main,
+.footer {
+  padding: 30px calc(50% - #{$half_width_content});
+}
+
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #7a938b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  //   @media screen and (max-width: 992px) {
+  //     background: #b1d344;
+  //   }
+  //   @media screen and (max-width: 768px) {
+  //     background: #ca5c13;
+  //   }
+}
+.nav {
+  &__burger,
+  &__burger-img {
+    display: none;
+  }
+}
+.menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    margin: 0 25px;
+  }
+  &__link {
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+.main {
+  padding: 30px calc(50% );
+  margin-top: 62px;
+  background: #58888a;
+  //   @media screen and (max-width: 992px) {
+  //     flex-direction: column;
+  //   }
+}
+// .container {
+
+// }
+.block-group {
+  display: flex;
+}
+.block {
+  width: 100%;
+  padding: 25px;
+  margin: 0 20px;
+  box-shadow: 0px 2px 10px 2px #4f666dfa;
+  //   @media screen and (max-width: 992px) {
+  //     margin: 15px 0;
+  //   }
+  &_about {
+    background: linear-gradient(158deg, #cfc6cf, #586e6e);
+  }
+  &_company {
+    background: #6bc5a2;
+  }
+  &_contact {
+    background: #469778;
+  }
+  &_content {
+    margin: 30px 0 0;
+  }
+}
+
+.f-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+@import "media-quer";
